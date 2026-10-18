@@ -1,0 +1,45 @@
+study_id = "higher-order-garch-v1"
+created_date = "2026-10-18"
+status = "FROZEN_BEFORE_HIGHER_ORDER_FITS_OR_LOSS_INSPECTION"
+classification = "EXPLORATORY_POST_BASELINE_HISTORICAL_EXTENSION"
+authorization = "User explicitly requested GARCH(2,1) and GARCH(1,2) as a separate extension; the completed baseline study is preserved."
+question = "Do richer direct shock responses or variance persistence improve paired next-day QLIKE versus the completed GARCH(1,1) forecast pipeline?"
+baseline_result_already_known = true
+baseline_protocol_sha256 = "99a7bbc83f8fed2b26182e4ebb78da30e17351025592a21c3cf8c1ca7df06116"
+snapshot_prices_sha256 = "5d988934587a82822fcd9947bae28e4ebc7996e582e44acc45af7b2c56bd19a8"
+baseline_ledger_sha256 = "088f24daf1f2ab150970a83b9bb1135fb72a337febfb8f7677e8972ad441a389"
+baseline_summary_sha256 = "6de4a5cdadf1a4ad0686b4d52aea647bdcdac1c2e281584d58adab49565c2d5d"
+baseline_completion_sha256 = "13f962506716c8997d8530eb103c60aca0f3ed16436f14d37b7cc099b803adba"
+dependency_lock_sha256 = "05e3947b7d8cb8d3e3a1470f519397acca6aff050ab795f1f413f2bd640fb05a"
+asset = "SPY"
+evaluation_start = "2020-01-02"
+evaluation_end = "2025-12-31"
+expected_targets = 1508
+baseline_policy = "Reuse the exact completed GARCH(1,1) ledger and same-origin EWMA fallback values. Never refit the historical baseline."
+notation = "arch convention: p squared-shock lags; q conditional-variance lags. GARCH(1,1) already has recursive long memory."
+candidate_models = ["garch_21", "garch_12"]
+garch_21_hypothesis = "An extra direct squared-shock lag improves forecast accuracy by allowing richer short-run shock responses."
+garch_12_hypothesis = "An extra conditional-variance lag improves forecast accuracy by allowing richer persistence dynamics."
+economic_interpretation = "Reduced-form predictive evidence only; coefficients cannot identify causal news, liquidity or uncertainty mechanisms."
+mean = "Zero"
+distribution = "normal"
+window = 1260
+refit = "Each origin, last 1260 observed log returns only; fresh deterministic library initialization, no warm-start."
+scale = 100.0
+optimizer_tolerance = 0.00000001
+optimizer_max_iterations = 1000
+acceptance = "Converged; all parameters/forecast finite; omega>0; every alpha,beta>=0; sum(alpha)+sum(beta)<1; variance>0."
+variance_floor = 0.000000000001
+failure_policy = "Same-origin frozen EWMA fallback for rejected/error fits. Retain every date, model, failure reason and floor count."
+maximum_fallback_fraction = 0.05
+fit_gate = "Above 5% fallback: retain descriptive pipeline scores but withhold model-improvement conclusions."
+primary_loss = "QLIKE = log(forecast_variance) + squared_return / forecast_variance"
+contrasts = ["garch_21 minus frozen garch_11", "garch_12 minus frozen garch_11"]
+nulls = "Each paired expected loss difference equals zero; two-sided tests, improvements additionally require negative difference."
+uncertainty = "Identical Newey-West Bartlett HAC lag rule floor(4*(n/100)^(2/9)); autocovariance denominator n. Marginal normal 95% intervals."
+p_values = "Two-sided asymptotic normal p = 2*norm.sf(abs(mean_difference/HAC_SE)); SE=0 gives p=1 and no inference."
+multiplicity = "Holm step-down adjustment across exactly both contrasts, family alpha=0.05. No adjustment across the wider history of research."
+evidence_rule = "Negative mean difference, Holm-adjusted p<=0.05, nonzero HAC_SE, and candidate fallback fraction<=0.05. Exploratory evidence only."
+secondary = "All-model mean QLIKE and variance MSE; fit failures and variance floor counts. No GARCH(2,1)-versus-(1,2) significance test."
+interpretation = "Known original result and reused familiar historical sample. Not confirmatory, fresh out-of-sample evidence, economic causality, alpha or allocation performance."
+stopping_rule = "One historical extension execution. Preserve failures. No new orders, distributions, windows, samples or tests after the outcome; corrections require a documented new study identity."

@@ -1,0 +1,41 @@
+{
+  "interpretation": "Retrospective forecasts; no allocation backtest or alpha claim.",
+  "target_count": 1508,
+  "first_target": "2020-01-02",
+  "last_target": "2025-12-31",
+  "scores": {
+    "historical_63": {
+      "count": 1508,
+      "mean_qlike": -7.9563978371469775,
+      "variance_mse": 4.45786732803665e-07,
+      "floor_count": 0
+    },
+    "ewma_094": {
+      "count": 1508,
+      "mean_qlike": -8.10047348146384,
+      "variance_mse": 3.7740278197193193e-07,
+      "floor_count": 0
+    },
+    "garch_11": {
+      "count": 1508,
+      "mean_qlike": -8.144202682459891,
+      "variance_mse": 3.253077476768648e-07,
+      "floor_count": 0
+    }
+  },
+  "primary_contrast": "garch_11 minus ewma_094 QLIKE; negative favours GARCH-with-fallback",
+  "primary_hac": {
+    "count": 1508,
+    "lag": 7,
+    "mean_difference": -0.04372920099605196,
+    "standard_error": 0.02240804163963782,
+    "lower_95": -0.08764815557381594,
+    "upper_95": 0.0001897535817120266
+  },
+  "garch_fallback_count": 0,
+  "garch_fallback_fraction": 0.0,
+  "garch_failure_reasons": {},
+  "model_level_claim_permitted_by_fit_gate": true,
+  "fit_gate_note": "Fit-gate eligibility is not evidence of improvement. Scores include every fallback.",
+  "kind": "historical"
+}

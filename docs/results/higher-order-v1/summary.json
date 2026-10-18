@@ -1,0 +1,79 @@
+{
+  "classification": "EXPLORATORY_POST_BASELINE_HISTORICAL_EXTENSION",
+  "target_count": 1508,
+  "first_target": "2020-01-02",
+  "last_target": "2025-12-31",
+  "scores": {
+    "garch_11": {
+      "count": 1508,
+      "mean_qlike": -8.144202682459891,
+      "variance_mse": 3.253077476768648e-07
+    },
+    "garch_21": {
+      "count": 1508,
+      "mean_qlike": -8.138272894063315,
+      "variance_mse": 3.267030015434347e-07
+    },
+    "garch_12": {
+      "count": 1508,
+      "mean_qlike": -8.142854695555341,
+      "variance_mse": 3.2795330375184866e-07
+    }
+  },
+  "failures": {
+    "garch_21": {
+      "fallback_count": 0,
+      "fallback_fraction": 0.0,
+      "floor_count": 0,
+      "reasons": {}
+    },
+    "garch_12": {
+      "fallback_count": 0,
+      "fallback_fraction": 0.0,
+      "floor_count": 0,
+      "reasons": {}
+    }
+  },
+  "contrasts": {
+    "garch_21": {
+      "contrast": "garch_21 minus frozen garch_11",
+      "marginal_hac_95": {
+        "count": 1508,
+        "lag": 7,
+        "mean_difference": 0.005929788396578025,
+        "standard_error": 0.005504474326831184,
+        "lower_95": -0.004858783037836454,
+        "upper_95": 0.016718359830992503
+      },
+      "asymptotic_z": 1.0772669731010782,
+      "raw_two_sided_p": 0.28136101257380486,
+      "candidate_fallback_fraction": 0.0,
+      "fit_gate_pass": true,
+      "degenerate_hac_se": false,
+      "holm_adjusted_p": 0.43068448910235935,
+      "exploratory_evidence_of_lower_loss": false
+    },
+    "garch_12": {
+      "contrast": "garch_12 minus frozen garch_11",
+      "marginal_hac_95": {
+        "count": 1508,
+        "lag": 7,
+        "mean_difference": 0.001347986904550753,
+        "standard_error": 0.001087955888945334,
+        "lower_95": -0.0007843674545503605,
+        "upper_95": 0.0034803412636518665
+      },
+      "asymptotic_z": 1.2390087854182152,
+      "raw_two_sided_p": 0.21534224455117967,
+      "candidate_fallback_fraction": 0.0,
+      "fit_gate_pass": true,
+      "degenerate_hac_se": false,
+      "holm_adjusted_p": 0.43068448910235935,
+      "exploratory_evidence_of_lower_loss": false
+    }
+  },
+  "multiplicity": "Holm across both predefined two-sided contrasts; family alpha=0.05.",
+  "interval_note": "95% intervals are marginal; family decisions use Holm-adjusted p-values.",
+  "limitations": "Known baseline and reused historical sample. No fresh confirmation, causal mechanism, alpha or allocation claim.",
+  "kind": "historical"
+}

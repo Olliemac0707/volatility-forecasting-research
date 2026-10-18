@@ -1,0 +1,27 @@
+{
+  "status": "started",
+  "started_at": "2026-10-18T20:39:29.328704+00:00",
+  "kind": "historical",
+  "protocol_sha256": "99a7bbc83f8fed2b26182e4ebb78da30e17351025592a21c3cf8c1ca7df06116",
+  "input_sha256": "5d988934587a82822fcd9947bae28e4ebc7996e582e44acc45af7b2c56bd19a8",
+  "package_version": "0.1.0",
+  "source_sha256": {
+    "__init__.py": "2dbff994f11dffb98beb52f24701f3bef5c672d13bde9a88a2e044644d6eee83",
+    "cli.py": "7a9a9bcbe9bd13ea20f5c5d17af02d04b056a31b64adb3de485811242fb3f65a",
+    "data.py": "5242fbfc486fd3c5827c3ad6ba1c15596089097b30754743248d1fd440196508",
+    "experiment.py": "afc5b7ffeaea894a9093875b46c4f99530732f4ffa8d3dfcf16ff70ba396e033",
+    "models.py": "0ede3b6c8c6e506354b3a81aae6977f682a02d41eab1ab4ae0599a16230836d3",
+    "protocol.py": "cc139fd70e19b9eba02b5a2fb04fe78a07cbab2c19effcac4039d7ea04aa22c7",
+    "statistics.py": "b72b5640dda5480f81e7f86e0923e1c63ba73b2780cda662bdcd75bf70efd0a5"
+  },
+  "lock_sha256": "05e3947b7d8cb8d3e3a1470f519397acca6aff050ab795f1f413f2bd640fb05a",
+  "effective_evaluation_start": "2020-01-02",
+  "effective_evaluation_end": "2025-12-31",
+  "dependencies": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "arch": "8.0.0",
+    "exchange-calendars": "4.13.2"
+  }
+}

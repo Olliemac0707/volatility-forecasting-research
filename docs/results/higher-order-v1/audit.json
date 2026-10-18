@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "study_id": "higher-order-garch-v1",
+  "target_count": 1508,
+  "extension_protocol_sha256": "6c908954ca7cb88033e560cf87f5e14600bba0b376293daeaf43f8623a202f96",
+  "original_study_unchanged": true,
+  "exact_frozen_baseline_reused": true,
+  "windows_targets_and_parameters_validated": true,
+  "losses_mse_hac_intervals_and_holm_independently_reconciled": true,
+  "fallback_counts": {
+    "garch_21": 0,
+    "garch_12": 0
+  },
+  "historical_model_refits_during_audit": 0
+}

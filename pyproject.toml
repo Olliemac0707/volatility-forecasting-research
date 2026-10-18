@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "volatility-signal-research"
+version = "0.1.0"
+description = "Auditable daily variance forecasts and a separately scoped allocation signal."
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "numpy>=2,<3",
+  "pandas>=2.2,<4",
+  "scipy>=1.14,<2",
+  "arch>=7.2,<9",
+  "exchange-calendars>=4.8,<5",
+  "yfinance==1.5.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3,<9", "pytest-cov>=6,<7", "ruff>=0.9,<1", "mypy>=1.14,<2", "pandas-stubs>=2.2,<4"]
+
+[project.scripts]
+volatility-research = "volatility_research.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/volatility_research"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["src"]
+
+[[tool.mypy.overrides]]
+module = ["arch", "exchange_calendars", "yfinance"]
+ignore_missing_imports = true

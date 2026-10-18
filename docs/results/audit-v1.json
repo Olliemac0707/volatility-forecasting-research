@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "study_id": "spy-daily-variance-v1",
+  "target_count": 1508,
+  "snapshot_rows": 5283,
+  "protocol_sha256": "99a7bbc83f8fed2b26182e4ebb78da30e17351025592a21c3cf8c1ca7df06116",
+  "calendar_complete": true,
+  "training_windows_match_snapshot": true,
+  "source_and_lock_hashes_match_execution": true,
+  "ledger_and_summary_hashes_match_receipt": true,
+  "losses_and_hac_se_independently_reconciled": true,
+  "garch_fallback_count": 0,
+  "note": "Audit only: no model refit, alternate specification or new performance test."
+}

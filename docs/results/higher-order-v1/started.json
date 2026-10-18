@@ -1,0 +1,27 @@
+{
+  "status": "started",
+  "kind": "historical",
+  "started_at": "2026-10-18T21:02:21.343328+00:00",
+  "extension_protocol_sha256": "6c908954ca7cb88033e560cf87f5e14600bba0b376293daeaf43f8623a202f96",
+  "baseline_ledger_sha256": "088f24daf1f2ab150970a83b9bb1135fb72a337febfb8f7677e8972ad441a389",
+  "input_sha256": "5d988934587a82822fcd9947bae28e4ebc7996e582e44acc45af7b2c56bd19a8",
+  "source_sha256": {
+    "__init__.py": "2dbff994f11dffb98beb52f24701f3bef5c672d13bde9a88a2e044644d6eee83",
+    "cli.py": "7a9a9bcbe9bd13ea20f5c5d17af02d04b056a31b64adb3de485811242fb3f65a",
+    "data.py": "5242fbfc486fd3c5827c3ad6ba1c15596089097b30754743248d1fd440196508",
+    "experiment.py": "afc5b7ffeaea894a9093875b46c4f99530732f4ffa8d3dfcf16ff70ba396e033",
+    "extension.py": "d48cdb70915303f14dcae437de48ef59730f262cae115f9588763cd68deb36de",
+    "extension_statistics.py": "65f7882e3da72830d8753a4cda276ef69835c0ee35409aa16e6345e2d9cfcc8e",
+    "higher_order.py": "873d7d630f9a66e1cc12de8ee8612366287002bc24c0db69905c27762d3aab04",
+    "models.py": "0ede3b6c8c6e506354b3a81aae6977f682a02d41eab1ab4ae0599a16230836d3",
+    "protocol.py": "cc139fd70e19b9eba02b5a2fb04fe78a07cbab2c19effcac4039d7ea04aa22c7",
+    "statistics.py": "b72b5640dda5480f81e7f86e0923e1c63ba73b2780cda662bdcd75bf70efd0a5"
+  },
+  "lock_sha256": "05e3947b7d8cb8d3e3a1470f519397acca6aff050ab795f1f413f2bd640fb05a",
+  "dependencies": {
+    "arch": "8.0.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pandas": "3.0.6"
+  }
+}

@@ -1,0 +1,41 @@
+study_id = "spy-daily-variance-v1"
+created_date = "2026-10-18"
+status = "FROZEN_BEFORE_NEW_PROJECT_DATA_ACQUISITION"
+scope = "Retrospective forecast evaluation only; allocation experiment is not specified or executed."
+asset = "SPY"
+source = "Yahoo Finance via yfinance==1.5.1"
+snapshot_start = "2005-01-03"
+snapshot_end = "2025-12-31"
+evaluation_start = "2020-01-02"
+evaluation_end = "2025-12-31"
+prices = "Adj Close, auto_adjust=False, back_adjust=False, repair=False"
+target = "Next-session squared adjusted close-to-close log return, decimal units"
+mean_assumption = "Zero conditional mean; squared return is a noisy variance proxy, not observed latent variance."
+timing = "Issued after origin close; training uses returns through origin only; target is next XNYS session."
+calendar = "XNYS via locked exchange-calendars; all expected snapshot sessions required, no fill or dropped dates."
+models = ["historical_63", "ewma_094", "garch_11"]
+historical_window = 63
+historical_estimator = "Mean squared log returns under the zero-mean assumption, denominator n."
+ewma_decay = 0.94
+ewma_seed_window = 63
+ewma_update = "Seed with first 63 squared-return mean; recursively update through each origin using all subsequent returns."
+garch_window = 1260
+garch_mean = "Zero"
+garch_distribution = "normal"
+garch_refit = "Every origin, last 1260 returns only; no warm-start from future fits."
+garch_scale = 100.0
+garch_optimizer_tolerance = 0.00000001
+garch_optimizer_max_iterations = 1000
+garch_acceptance = "Converged; finite forecast and parameters; omega>0; alpha,beta>=0; alpha+beta<1."
+variance_floor = 0.000000000001
+failure_policy = "Use same-origin floored EWMA on GARCH error/nonconvergence/invalid parameters; keep every target and record reason."
+maximum_garch_fallback_fraction = 0.05
+failure_interpretation = "Above threshold: no model-level GARCH accuracy claim; retain fallback-pipeline descriptive scores."
+primary_loss = "QLIKE = log(forecast_variance) + squared_return / forecast_variance"
+primary_contrast = "garch_11 loss minus ewma_094 loss; negative favours the GARCH-with-fallback pipeline."
+uncertainty = "Newey-West Bartlett HAC; lag=floor(4*(n/100)^(2/9)); autocovariance denominator n; two-sided normal 95% CI."
+minimum_evaluation_count = 30
+secondary = "All-model mean QLIKE and variance MSE, fit failures, floor counts; descriptive only, no alternate significance tests."
+missing_policy = "Fail on nonfinite/nonpositive prices, duplicate or unsorted dates, missing calendar sessions or insufficient history."
+interpretation = "Familiar historical years; not pristine out-of-sample evidence, global alpha evidence or a trading-performance test."
+stopping_rule = "Run the fixed historical evaluation once on the accepted snapshot. Preserve any failed run; do not tune to its outcome. Corrections must be documented with a new protocol identity."
