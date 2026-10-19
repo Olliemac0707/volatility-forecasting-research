@@ -1,21 +1,15 @@
-# Contributions and AI assistance
+# Development and validation notes
 
-This project was developed with substantial assistance from OpenAI Codex. Repository ownership should not be interpreted as a claim that every implementation or research-design decision was made independently by the maintainer.
+This project was developed with the help of AI assistance under the maintainer's direction.
 
-## Maintainer contribution
+The maintainer directed the research scope, discussed the design and interpretation, requested the higher-order GARCH extension, reviewed the reported findings, and authorized publication.
 
-The maintainer set the objective of building a quantitative-research portfolio, approved the volatility-forecasting direction, discussed the model definitions and interpretation, explicitly requested the GARCH(2,1)/GARCH(1,2) extension, reviewed the reported findings in conversation, and authorized public release.
+## Validation
 
-Those contributions concern project direction, scope and review of the reported conclusions. They are not a claim of independently writing all the code or independently verifying every numerical result.
+Tests and audit scripts provide inspectable engineering evidence. They form part of the development workflow, rather than an independent external scientific review. “Independent reconciliation” in the reports refers to separate calculations against stored artifacts, not a separate research team or independently sourced dataset.
 
-## Codex assistance
+## Research scope
 
-Codex proposed and documented the initial design choices, implemented the package and tests, configured the development environment, executed the fixed historical studies, wrote audit calculations, generated figures, and drafted documentation. Codex also implemented the separately authorized higher-order extension and its fixed two-comparison procedure.
+The findings are the recorded outcomes of two explicit historical specifications. The higher-order extension was formulated after the original result was known and is labelled exploratory. The project does not claim new GARCH theory, proven alpha or executable historical trading returns.
 
-The tests and audit scripts provide inspectable engineering evidence. They were produced within the same AI-assisted workflow; the project has not received independent external scientific review. The phrase “independent reconciliation” in the reports refers to separate calculations against stored artifacts, rather than a separate research team or an independently sourced dataset.
-
-## Research claims
-
-The findings are the recorded outcomes of two explicit historical specifications. The extension was formulated after the original result was known and is labelled exploratory. No claim is made of sole manual implementation, new GARCH theory, proven alpha, executable historical trading returns or a complete public reconstruction of vendor data.
-
-The code, protocols and aggregate evidence are available for inspection. A fresh provider download need not match the retained snapshot, and automated checks do not establish the economic truth of the modelling assumptions.
+The code, protocols and aggregate evidence are available for inspection. Exact historical reconstruction requires the matching accepted vendor snapshot; a fresh provider download can differ. Automated checks establish implementation evidence, not the economic truth of the modelling assumptions.

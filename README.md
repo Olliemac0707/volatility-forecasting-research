@@ -6,7 +6,9 @@ Across **1,508 paired forecast dates in 2020–2025**, GARCH(1,1) had the lowest
 
 ![Forecast losses and the primary uncertainty interval](docs/figures/forecast-comparison.svg)
 
-This is an **AI-assisted applied time-series research project**. It demonstrates past-only forecasting, explicit statistical comparisons, failure handling and auditable results. It does not claim a novel GARCH method, a profitable trading strategy or proven alpha. See [contributions and AI assistance](CONTRIBUTIONS.md).
+This applied time-series research project demonstrates past-only forecasting, explicit statistical comparisons, failure handling and auditable results. It does not claim a novel GARCH method, a profitable trading strategy or proven alpha.
+
+**Acknowledgment:** This project was developed with the help of AI assistance under the maintainer's direction. See [development and validation notes](CONTRIBUTIONS.md).
 
 ## Findings
 
