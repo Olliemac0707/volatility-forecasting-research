@@ -1,8 +1,6 @@
 # Development and validation notes
 
-This project was developed with the help of AI assistance under the maintainer's direction.
-
-The maintainer directed the research scope, discussed the design and interpretation, requested the higher-order GARCH extension, reviewed the reported findings, and authorized publication.
+AI-assisted tools were used during development.
 
 ## Validation
 
